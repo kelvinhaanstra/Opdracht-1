@@ -33,25 +33,207 @@
 		<form>
 			<fieldset>
 				<legend>Aanmeldformulier</legend>
-
-				<label for”name”>Naam</label>
-				<input id=”name” type="text"/>
-
-				<label for”company”>Bedrijf</label>
-				<input id=”company” type="text"/>
-
-				<label for”adres”>Adres</label>
-				<input id=”adres” type="text"/>
-
-				<label for”postal”>Postcode</label>
-				<input id=”postal” type="text" pattern="[1-9][0-9][3]\s?[a-z][a-z]"/>
-
-				<label for”phone”>Telefoon nummer</label>
-				<input id=”phone” type="tel"/>
-
-				<label for”email”>Email Adres</label>
-				<input id=”email” type="email"/>	
+				<ul>
+					<li>
+						<label for="name">Naam</label>
+						<input type="text" id="naam" placeholder="Voor- en achternaam" required />
+					</li>
+					<li>
+						<label for="company">Bedrijf</label>
+						<input type="text" id="bedrijf" placeholder="Uw bedrijf" required />
+					</li>
+					<li>
+						<label for="”adres">Adres</label>
+						<input type="text" id="adres" placeholder="Straatnaam en huisnummer" required />
+					</li>
+					<li>
+						<label for="postal">Postcode</label>
+						<input type="text" id="postcode" placeholder="1234AB" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required />
+					</li>
+					<li>	
+						<label for="phone">Telefoon nummer</label>
+						<input type="tel" id="tel" placeholder="012-3456789" required />
+					</li>
+					<li>
+						<label for="email">Email Adres</label>
+						<input type="email" id="email" placeholder="email@adres.nl" required />	
+				</ul>
 			</fieldset>		
+
+			<fieldset>
+				<legend>Ik wil me aanmelden</legend>
+				<ul>
+					<li>
+						<input type="radio" id="project" name="aanmelden" value="project" required />
+						<label for="project">Voor een project</label>
+					</li>
+					<li>
+						<input type="radio" id="stagebedijf" name="aanmelden" value="stagebedrijf" required />
+						<label>Als stagebedrijf</label>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+
+		<form>
+			<fieldset>
+				<legend>Project</legend>
+				<fieldset>
+					<legend>Project gegevens</legend>
+					<ol>
+						<li>
+							<label for="titel">Titel:</label>
+							<input type="text" id="titel" placeholder="CMD Aan" required />
+						</li>
+						<li>
+							<label>Opdrachtomschrijving:</label>
+							<textarea placeholder="Beschrijf uw opdrachtomschrijving." required></textarea>
+						</li>
+						<li>
+							<label>Doelgroepomschrijving</label>
+							<textarea placeholder="Beschrijf uw doelgroepsomschrijving." required></textarea>
+						</li>
+						<li>
+							<label>Doelstelling/ intentie van het project:</label>
+							<textarea placeholder="Beschrijf uw doelstelling." required></textarea>
+						</li>
+						<li>
+							<label for="month">Looptijd:</label>
+							<input type="month" id="month" required />
+						</li>
+						<li>
+							<label for="date">Deadline:</label>
+							<input type="date" id="date" required />
+						</li>
+					</ol>
+				</fieldset>
+
+				<fieldset>
+					<legend>Geschikt voor</legend>
+					<ol>
+						<li>
+							<input type="radio" id="eerstejaars" name="studenten" value="project" required />
+							<label for="eerstejaars">Eerstejaars studenten</label>
+						</li>
+						<li>
+							<input type="radio" id="tweedejaars" name="studenten" value="project" required />
+							<label for="tweedejaars">Tweedejaars studenten</label>
+						</li>
+						<li>
+							<input type="radio" id="derdejaars" name="studenten" value="project" required />
+							<label for="derdejaars">Derdejaars studenten</label>
+						</li>
+						<li>
+							<input type="radio" id="afstudeer" name="studenten" value="project" required />
+							<label for="afstudeer">Afstudeer studenten</label>
+						</li>
+						<li>
+							<input type="radio" id="onbekend" name="studenten" value="project" required />
+							<label for="onbekend">Onbekend</label>
+						</li>
+					</ol>
+				</fieldset>
+
+				<fieldset>
+					<legend>Laat een opmerking achter</legend>
+					<label>Opmerking:</label>
+					<textarea placeholder="Laat hier uw opmerking achter."></textarea>
+				</fieldset>
+			</fieldset>
+			<input type="submit" />
+		</form>
+
+		<form>
+			<fieldset>
+				<legend>Stage</legend>
+				<fieldset>
+					<legend>Geschikt Voor</legend>
+					<ol>
+						<li>
+							<input type="radio" id="tweedejaars" name="studenten" value="stage" required />
+							<label for="tweedejaars">Tweedejaars studenten</label>
+						</li>
+						<li>
+							<input type="radio" id="afstudeer" name="studenten" value="stage" required />
+							<label for="afstudeer">Afstudeer studenten</label>
+						</li>
+						<li>
+							<input type="radio" id="onbekend" name="studenten" value="stage" required />
+							<label for="onbekend">Onbekend</label>
+						</li>
+					</ol>
+				</fieldset>
+
+				<fieldset>
+					<legend>Tijdsduur Stage</legend>
+					<ol>
+						<li>
+							<label>Hoe lang is de stage?</label>
+							<ul>
+								<li>
+									<input type="radio" id="10weken" name="aanmelden" value="stage" required />
+									<label>10 weken</label>
+								</li>
+								<li>
+									<input type="radio" id="20weken" name="aanmelden" value="stage" required />
+									<label>20 weken</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<label for="date">Begin datum</label>
+							<input type="date" id="date" required />
+						</li>
+					</ol>
+				</fieldset>
+
+				<fieldset>
+					<legend>Beschrijving Werkzaamheden</legend>
+					<ol>
+						<li>
+							<label>Beschrijving stagewerkzaamheden:</label>
+							<textarea placeholder="Beschrijf hier uw stagewerkzaamheden." required></textarea>
+						</li>
+					</ol>
+				</fieldset>
+
+				<fieldset>
+					<legend>Beschrijving Stagebedrijf</legend>
+					<ol>
+						<li>
+							<label for="bedrijfsnaam">Bedrijfsnaam:</label>
+							<input type="text" id="bedrijfsnaam" placeholder="Uw bedrijf" required />
+						</li>
+						<li>
+							<label for="adres">Adres:</label>
+							<input type="text" id="adres" placeholder="Straatnaam en plaats" required />
+						</li>
+						<li>
+							<label for="postcode">Postcode:</label>
+							<input type="text" id="postcode" placeholder="1234AB" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required />
+						</li>
+						<li>
+							<label for="plaats">Plaats:</label>
+							<input type="text" id="plaats" placeholder="Plaats" required />
+						</li>
+						<li>
+							<label for="sector">Sector:</label>
+							<input type="text" id="sector" placeholder="Techniek" required />
+						</li>
+						<li>
+							<label>Core Business:</label>
+							<textarea placeholder="Wat is de kernactiviteit van uw bedrijf?" required></textarea>
+						</li>
+					</ol>
+				</fieldset>
+
+				<fieldset>
+					<legend>Laat een opmerking achter</legend>
+					<label>Opmerking:</label>
+					<textarea placeholder="Laat hier uw opmerking achter."></textarea>
+				</fieldset>
+			</fieldset>
+			<input type="submit" />
 		</form>
 
 	</section>
